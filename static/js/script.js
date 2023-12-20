@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //  Function to send POST request to the server
   function sendPredictionRequest(data) {
-      fetch('http://localhost:5000/predict/xgboost', {
+      fetch(`${window.location.origin}/predict/xgboost`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
