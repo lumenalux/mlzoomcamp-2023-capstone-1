@@ -37,7 +37,7 @@ For [detailed data exploration](EDA.ipynb) and [modeling](train.ipynb), the foll
 - 'AMT_CREDIT': Credit amount requested.
 - 'AMT_ANNUITY': Annuity of the loan.
 - 'AMT_GOODS_PRICE': Price of the goods for which the loan is given.
-- - 'REGION_POPULATION_RELATIVE': Relative population of the region.
+- 'REGION_POPULATION_RELATIVE': Relative population of the region.
 - 'DAYS_BIRTH': Age of the individual in days (negative value).
 - 'DAYS_EMPLOYED': Number of days the individual has been employed (negative value).
 - 'DAYS_REGISTRATION': Number of days the individual's registration was made relative to the current application.
