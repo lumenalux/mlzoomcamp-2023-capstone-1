@@ -1,0 +1,134 @@
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<div class="container">
+	<div class="content">
+
+		<div class="project-description">
+      <h2>About the Credit Evaluation Project</h2>
+      <p>
+          This project utilizes XGBoost, Random Forest and Linear Regression models to predict the likelihood of individuals facing difficulties in repaying credit. It's designed to assist financial institutions in making informed decisions. Users can input various personal and financial details to receive an instant prediction.
+      </p>
+
+      <h3>Input Field Descriptions</h3>
+      <ul>
+          <li><strong>CNT_CHILDREN:</strong> The number of children the individual has.</li>
+          <li><strong>AMT_INCOME_TOTAL:</strong> The total income of the individual.</li>
+          <li><strong>AMT_CREDIT:</strong> The total credit amount requested by the individual.</li>
+          <li><strong>AMT_ANNUITY:</strong> The annuity amount of the loan.</li>
+          <li><strong>AMT_GOODS_PRICE:</strong> The price of the goods for which the loan is given.</li>
+          <li><strong>REGION_POPULATION_RELATIVE:</strong> The relative population of the region where the individual lives.</li>
+          <li><strong>DAYS_BIRTH:</strong> The age of the individual in days (negative value).</li>
+          <li><strong>DAYS_EMPLOYED:</strong> The number of days the individual has been employed (negative value).</li>
+          <li><strong>DAYS_REGISTRATION:</strong> The number of days since the individual's registration, relative to the current application.</li>
+          <li><strong>DAYS_ID_PUBLISH:</strong> The number of days since the individual's identification was published.</li>
+          <li><strong>FLAG_WORK_PHONE:</strong> A binary flag indicating whether the individual has a work phone (1 for yes, 0 for no).</li>
+          <li><strong>REGION_RATING_CLIENT:</strong> The rating of the region where the individual resides, on a scale of 1 to 3.</li>
+          <li><strong>HOUR_APPR_PROCESS_START:</strong> The hour of the day when the loan application process started.</li>
+      </ul>
+  </div>
+  
+
+	</div>
+
+	<form id="form">
+
+		<div class="title">INPUT</div>
+
+		<!-- CNT_CHILDREN input -->
+    <div>
+        <label for="CNT_CHILDREN">Number of Children</label>
+        <input type="number" name="CNT_CHILDREN" id="CNT_CHILDREN" placeholder="0" />
+        <div class="error"></div>
+    </div>
+
+    <!-- AMT_INCOME_TOTAL input -->
+    <div>
+        <label for="AMT_INCOME_TOTAL">Total Income</label>
+        <input type="number" name="AMT_INCOME_TOTAL" id="AMT_INCOME_TOTAL" placeholder="100000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- AMT_CREDIT input -->
+    <div>
+        <label for="AMT_CREDIT">Credit Amount</label>
+        <input type="number" name="AMT_CREDIT" id="AMT_CREDIT" placeholder="500000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- AMT_ANNUITY input -->
+    <div>
+        <label for="AMT_ANNUITY">Annuity of Loan</label>
+        <input type="number" name="AMT_ANNUITY" id="AMT_ANNUITY" placeholder="25000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- AMT_GOODS_PRICE input -->
+    <div>
+        <label for="AMT_GOODS_PRICE">Price of Goods</label>
+        <input type="number" name="AMT_GOODS_PRICE" id="AMT_GOODS_PRICE" placeholder="500000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- REGION_POPULATION_RELATIVE input -->
+    <div>
+        <label for="REGION_POPULATION_RELATIVE">Relative Population of Region</label>
+        <input type="number" step="0.000001" name="REGION_POPULATION_RELATIVE" id="REGION_POPULATION_RELATIVE" placeholder="0.0200" />
+        <div class="error"></div>
+    </div>
+
+    <!-- DAYS_BIRTH input -->
+    <div>
+        <label for="DAYS_BIRTH">Age in Days</label>
+        <input type="number" name="DAYS_BIRTH" id="DAYS_BIRTH" placeholder="-12000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- DAYS_EMPLOYED input -->
+    <div>
+        <label for="DAYS_EMPLOYED">Days Employed</label>
+        <input type="number" name="DAYS_EMPLOYED" id="DAYS_EMPLOYED" placeholder="-1000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- DAYS_REGISTRATION input -->
+    <div>
+        <label for="DAYS_REGISTRATION">Days Since Registration</label>
+        <input type="number" name="DAYS_REGISTRATION" id="DAYS_REGISTRATION" placeholder="-3000" />
+        <div class="error"></div>
+    </div>
+
+    <!-- DAYS_ID_PUBLISH input -->
+    <div>
+        <label for="DAYS_ID_PUBLISH">Days Since ID Publish</label>
+        <input type="number" name="DAYS_ID_PUBLISH" id="DAYS_ID_PUBLISH" placeholder="-1500" />
+        <div class="error"></div>
+    </div>
+
+    <!-- FLAG_WORK_PHONE input -->
+    <div>
+        <label for="FLAG_WORK_PHONE">Work Phone (0 or 1)</label>
+        <input type="number" min="0" max="1" name="FLAG_WORK_PHONE" id="FLAG_WORK_PHONE" placeholder="1" />
+        <div class="error"></div>
+    </div>
+
+    <!-- REGION_RATING_CLIENT input -->
+    <div>
+        <label for="REGION_RATING_CLIENT">Region Rating</label>
+        <input type="number" min="1" max="3" name="REGION_RATING_CLIENT" id="REGION_RATING_CLIENT" placeholder="2" />
+        <div class="error"></div>
+    </div>
+
+    <!-- HOUR_APPR_PROCESS_START input -->
+    <div>
+        <label for="HOUR_APPR_PROCESS_START">Hour Application Process Started</label>
+        <input type="number" name="HOUR_APPR_PROCESS_START" id="HOUR_APPR_PROCESS_START" placeholder="12" />
+        <div class="error"></div>
+    </div>
+
+		<button id="btn" type="submit">Predict</button>
+	</form>
+
+</div>

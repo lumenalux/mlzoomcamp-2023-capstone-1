@@ -1,0 +1,255 @@
+/**
+* ! changing default styles of brower
+**/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		/* justify-content: space-around; */
+    justify-content: flex-start;
+		background-color: #6ef2da;
+		width: 55%;
+		min-height: 100vh;
+		padding: 10px 20px;
+
+		.image {
+			background-image: url("https://assets.codepen.io/1358848/illustration.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			height: 65%;
+		}
+	}
+
+	.text {
+		text-align: center;
+		color: white;
+		font-size: 18px;
+	}
+
+	/**
+* ! style rules for form section
+**/
+
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		max-width: 400px;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+		padding: 50px;
+		width: 45%;
+		max-width: none;
+
+		.btn {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 15px;
+
+			.btn-1,
+			.btn-2 {
+				padding: 10px 5px;
+				width: 100%;
+				display: flex;
+				gap: 15px;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid #c4c4c4;
+				border-radius: 8px;
+				box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+				cursor: pointer;
+			}
+
+			.btn-2 {
+				background-color: #4f70b5;
+				color: white;
+			}
+		}
+
+		.or {
+			text-align: center;
+		}
+
+		.question {
+			font-size: 15px;
+		}
+
+		span {
+			color: #6ef2da;
+			cursor: pointer;
+		}
+
+		.title {
+			font-size: 25px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+
+		div {
+			position: relative;
+			margin-bottom: 15px;
+
+			i {
+				position: absolute;
+				padding: 10px;
+			}
+
+			.failure-icon,
+			.error {
+				color: red;
+			}
+
+			.success-icon {
+				color: green;
+			}
+
+			.error {
+				font-size: 14.5px;
+				margin-top: 5px;
+			}
+
+			.success-icon,
+			.failure-icon {
+				right: 0;
+				opacity: 0;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 5px;
+			}
+
+			input {
+				width: 100%;
+				height: 40px;
+				border-radius: 8px;
+				outline: none;
+				border: 2px solid #c4c4c4;
+				padding: 0 30px;
+				box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+				&:focus {
+					border: 2px solid #6ef2da;
+				}
+			}
+		}
+
+		button {
+			margin-top: 15px;
+			width: 100%;
+			height: 45px;
+			background-color: #6ef2da;
+			border: 2px solid #6ef2da;
+			border-radius: 8px;
+			color: #fff;
+			font-size: 20px;
+			cursor: pointer;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+			transition: all 0.1s ease;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center logo horizontally */
+  justify-content: start; /* Start aligning content from the top */
+  background-color: #6ef2da;
+  width: 55%;
+  min-height: 100vh;
+  padding: 10px 20px;
+}
+
+.logo {
+  margin-top: 20px; /* Adjust as needed to create space at the top */
+  /* Centering logo if it's not an inline or inline-block element */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.project-description {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding: 20px;
+  background-color: black; /* Adjust background color if needed */
+  border-radius: 8px;
+  margin: 20px auto; /* Center the description box horizontally */
+  max-width: 80%; /* Adjust the max width as needed */
+  line-height: 1.6;
+}
+
+.project-description h2, .project-description h3 {
+  margin-bottom: 10px;
+}
+
+.project-description p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.project-description ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.project-description ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.project-description ul li:before {
+  content: '• ';
+  color: #f2796e; /* Adjust bullet color if needed */
+}
+
+
+@media (max-width: 425px) {
+	form {
+		padding: 20px;
+	}
+}
+
+@media (max-width: 900px) {
+	.container {
+		flex-direction: column;
+    align-items: flex-start;
+
+		.content {
+			width: 100%;
+
+			.image {
+				height: 70vh;
+			}
+		}
+
+		form,
+		.content {
+			width: 100%;
+		}
+
+		form .social .btn {
+			flex-direction: column;
+		}
+	}
+}
