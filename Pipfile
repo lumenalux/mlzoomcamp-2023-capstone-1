@@ -12,6 +12,7 @@ joblib = "*"
 xgboost = "*"
 scikit-learn = "*"
 imbalanced-learn = "*"
+requests = "*"
 
 [requires]
 python_version = "*"
