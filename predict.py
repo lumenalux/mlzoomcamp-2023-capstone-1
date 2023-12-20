@@ -1,15 +1,21 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import joblib
 import pandas as pd
 import xgboost as xgb
 
 app = Flask(__name__)
+CORS(app)
 
 # Load models
 logistic_regression_model = joblib.load('models/logistic_regression_model.pkl')
 random_forest_model = joblib.load('models/random_forest_model.pkl')
 xgboost_model = xgb.Booster()
 xgboost_model.load_model('models/xgboost_model.bin')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/predict/logistic_regression', methods=['POST'])
 def predict_logistic_regression():
